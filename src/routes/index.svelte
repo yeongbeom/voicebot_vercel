@@ -102,21 +102,21 @@
 		grid-column-start: 1;
 	}
 	.btn-group {
-		position: absolute; 
-		width: 800px; 
-		height: 60px;
-	}
+		position: absolute;
+		width: 800px;
+		height: 50px;
+  }
 	.change-mike {
 		position: relative;
-		float: right; 
-		top: 50px;
+		float: right;
+		top: 30px;
 		right: 80px;
-		/* border: 1px solid; */
 	}
 	.change-user {
 		position: relative;
 		float: right;
-		top:130px;
+		top:100px;
+		left: 40px;
 		/* border: 1px solid; */
 	}
 </style>
