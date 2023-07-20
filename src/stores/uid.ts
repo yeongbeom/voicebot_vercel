@@ -4,7 +4,11 @@ import { writable } from 'svelte/store';
 // nipa_1234567890-utterance
 const localUid = '';
 
-const sessUid = browser ? window.localStorage.getItem('uid') ?? localUid:localUid;
+const newId = new Uint32Array(1);
+crypto.getRandomValues(newId);
+const newUid = "nipa_" + newId[0] + "-utterance";  
+
+const sessUid = browser ? window.localStorage.getItem('uid') ?? localUid:newUid;
 
 const uid = writable<string>(sessUid);
 

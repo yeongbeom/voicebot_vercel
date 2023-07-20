@@ -14,7 +14,7 @@
 	import TestText from '$root/components/expressions/TestText.svelte';
 	import mikeTp from '$root/stores/mike';
 	import uid from '$root/stores/uid';
-
+	
 	onMount(() => {
 		console.debug('index.svelte mounted');
 		// sessionStorage.setItem('mikeTp', 'off')
