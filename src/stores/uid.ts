@@ -8,10 +8,15 @@ const newId = new Uint32Array(1);
 crypto.getRandomValues(newId);
 const newUid = "nipa_" + newId[0] + "-utterance";  
 
-const sessUid = browser ? window.localStorage.getItem('uid') ?? localUid:newUid;
+let sessUid = browser ? window.localStorage.getItem('uid') ?? localUid:newUid;
+
+if (sessUid == '') {
+	sessUid = newUid
+} 
 
 const uid = writable<string>(sessUid);
-
+// console.log('sessUid >> ', sessUid);
+// console.log('uid >> ', uid);
 uid.subscribe((val) => {
 	if (browser) {      
 		window.localStorage.setItem('uid', val);
