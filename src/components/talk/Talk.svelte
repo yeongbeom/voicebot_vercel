@@ -144,7 +144,9 @@
 			$say = text;
 		}
 		// console.log('mediaRecorder.state in handleSpeechOnresult: ' + mediaRecorder.state);
-		$heard = text;
+		const substrText = text.substr(0, 100);
+		// $heard = text;
+		$heard = substrText;
 	};
 	const handleSpeechOnend = () => {
 		// console.log('handleSpeechOnend')
