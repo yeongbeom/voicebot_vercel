@@ -78,7 +78,7 @@
 		// IdleTimer 5초마다 1 카운트
 		watchdogTimer = 0;
 		IdleTimer ++;
-		console.log("IdleTimer: ", IdleTimer)
+		// console.log("IdleTimer: ", IdleTimer)
 		// if (IdleTimer > 300){
 		if (IdleTimer >= 120){
 			reloadApp(window, 500)
@@ -172,7 +172,7 @@
 	const handleRecordOnstop = async (event: any) => {
 
 		// console.log("text from handleRecordOnstop: " + $heard);
-		// console.log(`handleRecordOnstop | ${mediaRecorder.state}`);
+		console.log(`handleRecordOnstop | ${mediaRecorder.state}`);
 		const audio = event.detail;
 
 		///////////////////////////////////// ### KETI Version ### /////////////////////////////////////
@@ -192,66 +192,69 @@
 		// 	uid: $uid  // 'nipa-utterance'
 		// };		
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+	
+	
 
-		// try {
-		// 	let empathyRes; // [TODO] connect to db
-		// 	watchdogTimer = 0;
-		// 	console.log("request text: " + $heard);
+		try {
+			let empathyRes; // [TODO] connect to db
+			watchdogTimer = 0;
+			console.log("request text: " + $heard);
 
-		// 	if (!command) empathyRes = await fetchEmpathyData(empathyReq);
+			// if (!command) empathyRes = await fetchEmpathyData(empathyReq);
+			// console.log("response text: " + empathyRes.text);
 
-		// 	console.log("response text: " + empathyRes.text);
+			/////////////////////////////////////  Original ver //////////////////////////////////////
+			// const audioData: ArrayBuffer = await fetchTtsData(command ? cmdResText : empathyRes.text);
 
-		// 	/////////////////////////////////////  Original ver //////////////////////////////////////
-		// 	// const audioData: ArrayBuffer = await fetchTtsData(command ? cmdResText : empathyRes.text);
-
-		// 	// const audioCtx = new AudioContext();
-		// 	// audioCtx.decodeAudioData(audioData, (buffer) => {
-		// 	// 	audioSource = audioCtx.createBufferSource();
-		// 	// 	audioSource.addEventListener('ended', setIdle);
-		// 	// 	audioSource.buffer = buffer;
-		// 	// 	audioSource.connect(audioCtx.destination);
-		// 	// 	audioSource.start(0);
-		// 	// });
-		// 	///////////////////////////////////////////////////////////////////////////////////
+			// const audioCtx = new AudioContext();
+			// audioCtx.decodeAudioData(audioData, (buffer) => {
+			// 	audioSource = audioCtx.createBufferSource();
+			// 	audioSource.addEventListener('ended', setIdle);
+			// 	audioSource.buffer = buffer;
+			// 	audioSource.connect(audioCtx.destination);
+			// 	audioSource.start(0);
+			// });
+			///////////////////////////////////////////////////////////////////////////////////
 
 
-		// 	/////////////////////////////////////  KETI ver  //////////////////////////////////
-		// 	function _base64ToArrayBuffer(base64: any) {
-		// 		var binary_string = window.atob(base64);
-		// 		var len = binary_string.length;
-		// 		var bytes = new Uint8Array(len);
-		// 		for (var i = 0; i < len; i++) {
-		// 			bytes[i] = binary_string.charCodeAt(i);
-		// 		}
-		// 		return bytes.buffer;
-		// 	}
+			// /////////////////////////////////////  KETI ver  //////////////////////////////////
+			// function _base64ToArrayBuffer(base64: any) {
+			// 	var binary_string = window.atob(base64);
+			// 	var len = binary_string.length;
+			// 	var bytes = new Uint8Array(len);
+			// 	for (var i = 0; i < len; i++) {
+			// 		bytes[i] = binary_string.charCodeAt(i);
+			// 	}
+			// 	return bytes.buffer;
+			// }
 
-		// 	try {
-		// 		const audioData = _base64ToArrayBuffer(empathyRes.audio)
-		// 		const audioCtx = new AudioContext();
+			// try {
+			// 	const audioData = _base64ToArrayBuffer(empathyRes.audio)
+			// 	const audioCtx = new AudioContext();
 
-		// 		audioCtx.decodeAudioData(audioData, (buffer) => {
-		// 			audioSource = audioCtx.createBufferSource();
-		// 			audioSource.addEventListener('ended', setIdle);
-		// 			audioSource.buffer = buffer;
-		// 			audioSource.connect(audioCtx.destination);
-		// 			console.log("talking status: " + $currentStatus);
-		// 			audioSource.start(0);
-		// 		});
-		// 	} catch (error) {
-		// 		console.error('fetchTtsData error: ' + error);
-		// 	}
-		// 	///////////////////////////////////////////////////////////////////////////////////
+			// 	audioCtx.decodeAudioData(audioData, (buffer) => {
+			// 		audioSource = audioCtx.createBufferSource();
+			// 		audioSource.addEventListener('ended', setIdle);
+			// 		audioSource.buffer = buffer;
+			// 		audioSource.connect(audioCtx.destination);
+			// 		console.log("talking status: " + $currentStatus);
+			// 		audioSource.start(0);
+			// 	});
+			// } catch (error) {
+			// 	console.error('fetchTtsData error: ' + error);
+			// }
+			///////////////////////////////////////////////////////////////////////////////////
 			
-		// 	//@ts-ignore
-		// 	$currentExpression = $expression[command ? cmdResEmotion : empathyRes.emotion];
-		// 	$say = command ? cmdResText : empathyRes.text;
-		// 	$currentStatus = $status.talking;
-		// } catch (error) {
-		// 	setIdle();
-		// 	console.error(`${error} (${$currentStatus})`);
-		// }
+			//@ts-ignore
+			// $currentExpression = $expression[command ? cmdResEmotion : empathyRes.emotion];
+			// $say = command ? cmdResText : empathyRes.text;
+			// $currentStatus = $status.talking;
+			$currentStatus = $status.idle;
+		} catch (error) {
+			setIdle();
+			console.error(`${error} (${$currentStatus})`);
+		}
 	};
 
 	const onStatusChange = () => {

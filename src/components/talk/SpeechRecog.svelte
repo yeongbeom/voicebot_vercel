@@ -31,10 +31,12 @@
 
 		recognition.onstart = () => {
 			// console.debug(`Speech recognition started | ${$currentStatus}`);
-
+			// console.log($currentStatus, $status.idle)
 			if ($currentStatus === $status.idle) {
+				console.log('speech-onstart-idle')
 				dispatch('speech-onstart-idle');
 			} else {
+				console.log('speech-onstart-else')
 				dispatch('speech-onstart-else');
 
 				setTimeout(() => {

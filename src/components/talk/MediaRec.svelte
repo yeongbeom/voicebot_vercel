@@ -18,7 +18,7 @@
 
 		mediaRecorder.onstop = () => {
 			// console.debug(`Media recorder ended | ${$currentStatus}`);
-
+			console.log('end >>> ', $currentStatus, $status.thinking)
 			if ($currentStatus === $status.thinking) {
 				const blob = new Blob(chunks, {
 					type: 'audio/webm; codecs=opus'
