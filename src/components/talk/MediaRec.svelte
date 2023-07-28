@@ -19,15 +19,18 @@
 		mediaRecorder.onstop = () => {
 			// console.debug(`Media recorder ended | ${$currentStatus}`);
 			console.log('end >>> ', $currentStatus, $status.thinking)
+
 			if ($currentStatus === $status.thinking) {
+				
 				const blob = new Blob(chunks, {
 					type: 'audio/webm; codecs=opus'
 				});
 
+				let audio = ''
 				const reader = new FileReader();
 				reader.readAsDataURL(blob);
 				reader.onloadend = async () => {
-					const audio = reader.result as string;
+					audio = reader.result as string;
 					dispatch('record-onstop', audio);
 				};
 			}
