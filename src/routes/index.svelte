@@ -34,7 +34,7 @@
 
 	const handleUid = () => {
 		const curDate = new Date;
-		const timeInfo = (curDate.getMonth() + 1)+curDate.getDate() + "_" 
+		const timeInfo = (curDate.getMonth() + 1).toString()+curDate.getDate() + "_" 
 						+ curDate.getHours() + curDate.getMinutes() + curDate.getSeconds();
 		const newId = new Uint32Array(1);
 		crypto.getRandomValues(newId);
