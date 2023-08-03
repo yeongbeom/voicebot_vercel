@@ -34,8 +34,13 @@
 
 	const handleUid = () => {
 		const curDate = new Date;
-		const timeInfo = (curDate.getMonth() + 1).toString()+curDate.getDate() + "_" 
-						+ curDate.getHours() + curDate.getMinutes() + curDate.getSeconds();
+		const month = String(curDate.getMonth() + 1).padStart(2, '0')
+		const date = String(curDate.getDate()).padStart(2, '0')
+		const hours = String(curDate.getHours()).padStart(2, '0')
+		const minutes = String(curDate.getMinutes()).padStart(2, '0')
+		const seconds = String(curDate.getSeconds()).padStart(2, '0')
+
+		const timeInfo = month + date + "_" + hours + minutes + seconds;
 		const newId = new Uint32Array(1);
 		crypto.getRandomValues(newId);
 		const newUid = "nipa_cha_" + timeInfo + "_" + newId[0] + "-utterance";
