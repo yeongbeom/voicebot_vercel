@@ -35,7 +35,7 @@
 	const handleUid = () => {
 		const newId = new Uint32Array(1);
 		crypto.getRandomValues(newId);
-		const newUid = "nipa_" + newId[0] + "-utterance";  
+		const newUid = "nipa_cha_" + newId[0] + "-utterance";  
 		$uid = newUid;
 	}
 </script>

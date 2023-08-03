@@ -1,12 +1,12 @@
 import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 
-// nipa_1234567890-utterance
+// nipa_cha_1234567890-utterance
 const localUid = '';
 
 const newId = new Uint32Array(1);
 crypto.getRandomValues(newId);
-const newUid = "nipa_" + newId[0] + "-utterance";  
+const newUid = "nipa_cha_" + newId[0] + "-utterance";  
 
 let sessUid = browser ? window.localStorage.getItem('uid') ?? localUid:newUid;
 
