@@ -43,7 +43,7 @@
 		const timeInfo = month + date + "_" + hours + minutes + seconds;
 		const newId = new Uint32Array(1);
 		crypto.getRandomValues(newId);
-		const newUid = "web_" + timeInfo + "_" + newId[0];
+		const newUid = "web_" + timeInfo + "_" + newId[0] + "-utterance";
 		$uid = newUid;
 	}
 </script>
