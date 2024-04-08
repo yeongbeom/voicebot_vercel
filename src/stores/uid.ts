@@ -1,7 +1,7 @@
 import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 
-// web_1234567890-utterance
+// web_0408_1234567890
 const localUid = '';
 
 const curDate = new Date;
@@ -14,7 +14,7 @@ const seconds = String(curDate.getSeconds()).padStart(2, '0')
 const timeInfo = month + date + "_" + hours + minutes + seconds;
 const newId = new Uint32Array(1);
 crypto.getRandomValues(newId);
-const newUid = "web_" + timeInfo + "_" + newId[0] + "-utterance";
+const newUid = "web_" + timeInfo + "_" + newId[0];
 
 let sessUid = browser ? window.localStorage.getItem('uid') ?? localUid:newUid;
 
