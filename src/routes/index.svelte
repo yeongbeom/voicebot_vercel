@@ -40,10 +40,10 @@
 		const minutes = String(curDate.getMinutes()).padStart(2, '0')
 		const seconds = String(curDate.getSeconds()).padStart(2, '0')
 
-		const timeInfo = month + date + "_" + hours + minutes + seconds;
+		const timeInfo = month + date + "-" + hours + minutes + seconds;
 		const newId = new Uint32Array(1);
 		crypto.getRandomValues(newId);
-		const newUid = "web_" + timeInfo + "_" + newId[0] + "-utterance";
+		const newUid = "web_" + timeInfo + "_" + newId[0];
 		$uid = newUid;
 	}
 </script>

@@ -27,7 +27,7 @@
 	};
 	let webrtcMonitoring: any, webrtcEmpathy: any;
 
-	const userId = 'nipa-utterance'; // [TODO] connect to db
+	const userId = 'web_월일-시분초_난수'; // [TODO] connect to db
 
 	onMount(() => {
 		console.debug('WebRtc.svelte mounted');
