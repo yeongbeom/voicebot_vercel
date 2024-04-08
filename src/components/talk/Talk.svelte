@@ -119,7 +119,7 @@
 		if (results[0].isFinal) {
 			/*
 			if (text.includes('테라피') || text.includes('날씨') || text.includes('알람')) {
-				command = '/apps';
+				command = '/apps'; 
 				cmdResText = '서비스 화면으로 안내합니다.';
 				cmdResEmotion = $expression.neutral;
 			} else if (text.includes('시계')) {
