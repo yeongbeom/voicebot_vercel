@@ -171,7 +171,7 @@
 	};
 	const handleRecordOnstop = async (event: any) => {
 
-		// console.log("text from handleRecordOnstop: " + $heard);
+		// console.log("text from handleRecordOnstop: " + $heard); 
 		// console.log(`handleRecordOnstop | ${mediaRecorder.state}`);
 		const audio = event.detail;
 
