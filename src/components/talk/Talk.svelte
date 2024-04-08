@@ -176,11 +176,11 @@
 		const audio = event.detail;
 
 		///////////////////////////////////// ### KETI Version ### /////////////////////////////////////
-		// console.log("uid: " + "web_" + array[0] + "-utterance")
+		// console.log("uid: " + "web_" + "0408_" + array[0])
 		const empathyReq = {
 			audio,
 			text: $heard,
-			uid: $uid  // 'web_1234567890-utterance'
+			uid: $uid  // 'web_0408_1234567890'
 		};
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
