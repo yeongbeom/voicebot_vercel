@@ -176,11 +176,19 @@
 		const audio = event.detail;
 
 		///////////////////////////////////// ### KETI Version ### /////////////////////////////////////
+<<<<<<< HEAD
 		// console.log("uid: " + "web_" + "0408_" + array[0])
 		const empathyReq = {
 			audio,
 			text: $heard,
 			uid: $uid  // 'web_0408_1234567890'
+=======
+		// console.log("uid: " + "nipa_cha_" + array[0] + "-utterance")
+		const empathyReq = {
+			audio,
+			text: $heard,
+			uid: $uid  // 'nipa_cha_1234567890-utterance'
+>>>>>>> parent of c7f8ba8... update user id
 		};
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
 		

@@ -1,7 +1,11 @@
 import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 
+<<<<<<< HEAD
 // web_0408_1234567890
+=======
+// nipa_cha_1234567890-utterance
+>>>>>>> parent of c7f8ba8... update user id
 const localUid = '';
 
 const curDate = new Date;
@@ -14,7 +18,7 @@ const seconds = String(curDate.getSeconds()).padStart(2, '0')
 const timeInfo = month + date + "_" + hours + minutes + seconds;
 const newId = new Uint32Array(1);
 crypto.getRandomValues(newId);
-const newUid = "web_" + timeInfo + "_" + newId[0] + "-utterance";
+const newUid = "nipa_cha_" + timeInfo + "_" + newId[0] + "-utterance";
 
 let sessUid = browser ? window.localStorage.getItem('uid') ?? localUid:newUid;
 
