@@ -1,11 +1,7 @@
 import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 
-<<<<<<< HEAD
-// web_0408_1234567890
-=======
 // web_1234567890-utterance
->>>>>>> parent of c7f8ba8... update user id
 const localUid = '';
 
 const curDate = new Date;
